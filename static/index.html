@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project Infinity</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+
+<section id="auth" class="card auth">
+  <h1 class="logo">∞ Infinity</h1><p class="sub">Your AI command center</p>
+  <input id="a-name" placeholder="Name" class="reg-only">
+  <input id="a-email" type="email" placeholder="Email">
+  <input id="a-pass" type="password" placeholder="Password">
+  <button id="a-btn" class="btn">Login</button>
+  <p class="err" id="a-err"></p>
+  <p class="sub link" id="a-toggle">New here? Create account</p>
+</section>
+
+<div id="app" class="hidden">
+  <aside>
+    <h1 class="logo">∞ Infinity</h1>
+    <nav>
+      <button data-tab="chat" class="active">💬 Chat</button>
+      <button data-tab="analyze">📄 Analyzer</button>
+      <button data-tab="code">🧑‍💻 Code Check</button>
+      <button data-tab="notes">📝 Notes</button>
+      <button data-tab="dash">📊 Dashboard</button>
+    </nav>
+    <div class="who"><span id="uname"></span><button id="logout" class="ghost">Logout</button></div>
+  </aside>
+  <main>
+    <section id="chat" class="panel show">
+      <div id="msgs" class="msgs"></div>
+      <div class="row">
+        <button id="mic" class="icon" title="Speak">🎤</button>
+        <input id="c-in" placeholder="Ask anything...">
+        <button id="speak" class="icon" title="Read replies aloud">🔇</button>
+        <button id="c-send" class="btn">Send</button>
+      </div>
+    </section>
+
+    <section id="analyze" class="panel">
+      <h2>PDF &amp; Image Analyzer</h2>
+      <label class="drop" id="drop"><span id="dtxt">📎 Click or drop a PDF / image here</span><input id="file" type="file" hidden accept=".pdf,image/*"></label>
+      <button id="an-btn" class="btn">Analyze</button>
+      <div id="an-out" class="out"></div>
+    </section>
+
+    <section id="code" class="panel">
+      <h2>AI Code Checker</h2>
+      <select id="lang"><option>Python</option><option>JavaScript</option><option>Java</option><option>C</option><option>C++</option><option>SQL</option></select>
+      <textarea id="code-in" rows="10" placeholder="Paste your code here..."></textarea>
+      <button id="code-btn" class="btn">Check Code</button>
+      <div id="code-out" class="out"></div>
+    </section>
+
+    <section id="notes" class="panel">
+      <h2>Personal Notes</h2>
+      <input id="n-title" placeholder="Title"><textarea id="n-body" rows="4" placeholder="Write your note..."></textarea>
+      <button id="n-save" class="btn">Save Note</button>
+      <div id="n-list" class="grid"></div>
+    </section>
+
+    <section id="dash" class="panel">
+      <h2>Activity Dashboard</h2>
+      <div class="stat"><span id="total">0</span><small>total actions</small></div>
+      <div id="bars" class="bars"></div>
+      <h3>Recent activity</h3><ul id="recent"></ul>
+    </section>
+  </main>
+</div>
+<script src="app.js"></script></body></html>
